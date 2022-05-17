@@ -1,0 +1,34 @@
+<h1>Você deseja remover esse usuario?</h1>
+
+
+<div  *ngIf="vacinas">
+
+ <div class="form-group">
+ <label class="col-md-4 control-label" for="Nome">Id: <strong> {{vacinas.id}} </strong></label>
+ </div>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="NomeV">Nome da vacina:   <strong> {{vacinas.nome}} </strong></label>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="fabricante">Fabricante : <strong> {{vacinas.fabricante}} </strong> </label>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="doses">Quantidade de doses: <strong> {{vacinas.doses}} </strong> </label>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="intervalo">Intervalo:  <strong> {{vacinas.intervalo}} </strong> </label>
+</div>
+
+
+
+  <div class="col-md-2">
+    <button type="button" class="btn btn-primary" (click)="delete()">CONFIRMAR</button>
+    <button type="button" class="btn btn-primary"><a routerLink="/vacinas"> VOLTAR</a></button>
+  </div>
+</div>

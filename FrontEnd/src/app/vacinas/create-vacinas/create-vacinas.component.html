@@ -1,0 +1,59 @@
+<h1>Cadastro de vacinas</h1>
+
+
+<div class="body">
+<div class="col-md-11 control-label">
+  <p class="help-block"><h6>*  Campo Obrigatório</h6>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="Nome">Nome da vacina<h6>*</h6></label>
+<div class="col-md-8">
+<input id="Nome" name="Nome" placeholder="Insira o nome" [(ngModel)]="request.nome" class="form-control input-md" required="" type="text">
+</div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-2 control-label" for="NomeF">Nome do fabricante<h6>*</h6></label>
+  <div class="col-md-8">
+  <input id="NomeF" name="NomeF" placeholder="Insira o nome" [(ngModel)]="request.fabricante" class="form-control input-md" required="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="doses">Quantidade de doses<h6>*</h6></label>
+    <div class="col-md-8">
+    <input id="doses" name="doses" placeholder="EX : 20" [(ngModel)]="request.doses" class="form-control input-md" required="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="intervalo">Intervalo entre doses<h6>*</h6></label>
+    <div class="col-md-8">
+    <input id="intervalo" name="intervalo" placeholder="EX : 30" [(ngModel)]="request.doses" class="form-control input-md" required="" type="text">
+  </div>
+
+</div>
+</div>
+
+<div class="col-md-2">
+  <button type="button" class="btn btn-primary" (click)="save()">GRAVAR</button>
+  <button type="button" class="btn btn-primary"><a routerLink="/vacinas"> VOLTAR</a></button>
+</div>
+</div>
+
+
+</div>
+
+
+<br><br>
+
+
+<div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
+  <h3>Criado com sucesso</h3>
+  <label>id: {{response.id }}  </label> <br>
+  <label>nome: {{response.nome }}  </label><br>
+  <label>data_Nasc: {{response.data_Nasc }}  </label><br>
+  <label>endereco: {{response.endereco }} </label><br>
+  <label>telefone: {{response.telefone }} </label><br>
+</div>

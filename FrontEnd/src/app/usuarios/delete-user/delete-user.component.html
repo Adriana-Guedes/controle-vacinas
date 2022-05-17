@@ -1,0 +1,36 @@
+<h1>Você deseja remover esse usuario?</h1>
+
+
+<div  *ngIf="user">
+
+ <div class="form-group">
+ <label class="col-md-4 control-label" for="Nome">Id: <strong> {{user.id}} </strong></label>
+ </div>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="Nome">Nome Completo:   <strong> {{user.nome}} </strong></label>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="cpf">CPF : <strong> {{user.cpf}} </strong> </label>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="data_Nasc">Nascimento: <strong> {{user.data_Nasc}} </strong> </label>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="prependedtext">Telefone:  <strong> {{user.telefone}} </strong> </label>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="endereco">Endereço <strong> {{user.endereco}} </strong> </label>
+</div>
+
+  <div class="col-md-2">
+    <button type="button" class="btn btn-primary" (click)="delete()">CONFIRMAR</button>
+    <button type="button" class="btn btn-primary"><a routerLink="/usuarios"> VOLTAR</a></button>
+  </div>
+</div>

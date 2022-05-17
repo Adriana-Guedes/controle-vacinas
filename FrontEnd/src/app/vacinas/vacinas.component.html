@@ -1,0 +1,34 @@
+<h1></h1>
+
+<button type="titulo" class="btn btn-secondary btn-lg btn-block">Vacinas</button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">FABRICANTE</th>
+      <th scope="col">INTERVALO</th>
+      <th scope="col">QUANTIDADE DOSES</th>
+      <th scope="col">AÇÃO</th>
+      <th scope="col">AÇÃO</th>
+      <th scope="col">AÇÃO</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tbody>
+    <tr *ngFor="let vacinas of vacinas">
+      <td> {{vacinas.id}} </td>
+      <td> {{vacinas.nome}} </td>
+      <td> {{vacinas.fabricante}} </td>
+      <td> {{vacinas.intervalo}} </td>
+      <td> {{vacinas.doses}} </td>
+
+      <td>  <button type="button" class="btn btn-primary">
+        <a routerLink="/vacinas/create"> NOVO</a></button></td>
+
+      <td> <button type="button" class="btn btn-success">
+        <a routerLink="/vacinas/update/{{vacinas.id}}"> Alterar</a></button></td>
+
+      <td><button type="button" class="btn btn-danger">
+        <a routerLink="/vacinas/delete/{{vacinas.id}}"> Deletar</a></button></td>

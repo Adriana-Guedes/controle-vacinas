@@ -1,0 +1,74 @@
+<h1>Cadastro de usuarios</h1>
+
+
+<div class="body">
+<div class="col-md-11 control-label">
+  <p class="help-block"><h6>*  Campo Obrigatório</h6>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="Nome">Nome Completo<h6>*</h6></label>
+<div class="col-md-8">
+<input id="Nome" name="Nome" placeholder="Insira o nome" [(ngModel)]="request.nome" class="form-control input-md" required="" type="text">
+</div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="cpf">CPF <h6>*</h6></label>
+<div class="col-md-2">
+<input id="cpf" name="cpf"   class="form-control input-md"  placeholder="000.100.000-00"  required maxlength="11"  [(ngModel)]="request.cpf">
+</div>
+
+<label class="col-md-1 control-label" for="data_Nasc">Nascimento<h6>*</h6></label>
+<div class="col-md-2">
+<input id="data_Nasc" name="data_Nasc"   [(ngModel)]="request.data_Nasc " class="form-control input-md"  required="" type="text" maxlength="10" >
+</div>
+
+
+<!-- Prepended text-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="prependedtext">Telefone <h6>*</h6></label>
+<div class="col-md-2">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+<input id="prependedtext" name="prependedtext" class="form-control" placeholder="XX XXXXX-XXXX"   [(ngModel)]="request.telefone"   required="" type="text" maxlength="13">
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- Search input-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="endereco">Endereço <h6>*</h6></label>
+  <div class="col-md-2">
+    <input id="endereco" name="endereco" placeholder="Insira o endereco completo" class="form-control input-md"    [(ngModel)]="request.endereco"   required="" value="" type="search" >
+  </div>
+  <div class="col-md-2">
+      <button type="button" class="btn btn-primary" (click)="save()">GRAVAR</button>
+      <button type="button" class="btn btn-primary"><a routerLink="/usuarios"> VOLTAR</a></button>
+    </div>
+</div>
+
+
+
+</div>
+
+
+<br><br>
+
+
+<div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
+  <h3>Criado com sucesso</h3>
+  <label>id: {{response.id }}  </label> <br>
+  <label>nome: {{response.nome }}  </label><br>
+  <label>data_Nasc: {{response.data_Nasc }}  </label><br>
+  <label>endereco: {{response.endereco }} </label><br>
+  <label>telefone: {{response.telefone }} </label><br>
+</div>
+
+

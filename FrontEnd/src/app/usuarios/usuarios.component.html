@@ -1,0 +1,39 @@
+<h1></h1>
+
+<button type="titulo" class="btn btn-secondary btn-lg btn-block">Usuários</button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">CPF</th>
+      <th scope="col">DATA DE NASCIMENTO</th>
+      <th scope="col">ENDEREÇO</th>
+      <th scope="col">TELEFONE</th>
+      <th scope="col">AÇÃO</th>
+      <th scope="col">AÇÃO</th>
+      <th scope="col">AÇÃO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tbody>
+    <tr *ngFor="let usuarios of user">
+      <td> {{usuarios.id}} </td>
+      <td> {{usuarios.nome}} </td>
+      <td> {{usuarios.cpf}} </td>
+      <td> {{usuarios.data_Nasc}} </td>
+      <td> {{usuarios.endereco}} </td>
+      <td> {{usuarios.telefone}} </td>
+
+      <td>  <button type="button" class="btn btn-primary">
+        <a routerLink="/usuarios/create"> NOVO</a></button></td>
+
+      <td> <button type="button" class="btn btn-success">
+        <a routerLink="/usuarios/update/{{usuarios.id}}"> Alterar</a></button></td>
+
+      <td><button type="button" class="btn btn-danger">
+        <a routerLink="/usuarios/delete/{{usuarios.id}}"> Deletar</a></button></td>
+
+
+
+
