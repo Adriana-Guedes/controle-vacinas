@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.controle.vacinas.dto.UsuarioDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -33,7 +35,7 @@ public class UsuarioEntity {
 	private String cpf;
 	
 	@JsonFormat(pattern = "dd-MM-yyyy")
-	private Date  data_Nasc;
+	private String  data_Nasc;
 	private String endereco;
 	private String telefone;
 	

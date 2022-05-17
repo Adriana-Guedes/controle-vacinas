@@ -22,6 +22,7 @@ export class UpdateComponent implements OnInit {
     this.id= this.route.snapshot.paramMap.get('id');
       this.usuariosService.getUsuario(this.id).subscribe(res => {
         this.request = {
+          id: `${res.id} `,
           nome:`${res.nome}`,
           cpf:  `${res.cpf}`,
           data_Nasc : `${res.data_Nasc}`,
@@ -37,7 +38,10 @@ export class UpdateComponent implements OnInit {
     this.usuariosService.updateUsuario(this.id, this.request).subscribe(res =>
       alert( `Atualizar:  nome: ${res.nome},  cpf: ${res.cpf},  data_Nasc :  ${res.data_Nasc},  endereco: ${res.endereco},  telefone: ${res.telefone}`)
 
+
+
     )
 
+    
   }}
 

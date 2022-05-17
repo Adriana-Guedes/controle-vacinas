@@ -13,6 +13,7 @@ export class CreateUsuariosComponent implements OnInit {
 
   //PARA CRIAÇÃO NECESSÁRIO UM OBJETO VAZIO, PARA RECEBER OS DADOS INSERIDOS NA TELA(UTILIZAR NGMODEL PARA CAPTURA, IMPORTAR FormsModule)
   request: RequestCreate = {
+  id:'',
   nome: '',
   cpf: '',
   data_Nasc:'',

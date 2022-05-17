@@ -1,0 +1,50 @@
+<h1>Alteração de cadastro</h1>
+
+
+<div  *ngIf="request">
+<div class="col-md-5 control-label">
+  <p class="help-block"><h6>*  Campo Obrigatório</h6>
+</div>
+
+
+
+<br>
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="Nome">Cod. Usuario<h6>*</h6></label>
+<div class="col-md-4">
+<input id="Nome" name="Nome" placeholder="Insira o nome" [(ngModel)]="request.id_usuario" class="form-control input-md" required="" type="text">
+</div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-2 control-label" for="cpf">Cod. Vacina <h6>*</h6></label>
+<div class="col-md-4">
+<input id="cod.vacina" name="cod.vacina"   class="form-control input-md"  required maxlength="11"  [(ngModel)]="request.id_vacina">
+</div>
+
+<label class="col-md-1 control-label" for="data_Nasc">Data da aplicação<h6>*</h6></label>
+<div class="col-md-4">
+<input id="data_Nasc" name="data_Nasc"  class="form-control input-md"   maxlength="10" [(ngModel)]="request.data_aplicacao" >
+</div>
+
+<label class="col-md-1 control-label" for="data_Nasc">Numero da dose<h6>*</h6></label>
+<div class="col-md-4">
+<input id="data_Nasc" name="data_Nasc"  class="form-control input-md"   maxlength="15" [(ngModel)]="request.numero_dose" >
+</div>
+
+<label class="col-md-1 control-label" for="data_Nasc">Proxima dose<h6>*</h6></label>
+<div class="col-md-4">
+<input id="data_Nasc" name="data_Nasc"  class="form-control input-md"   maxlength="10" [(ngModel)]="request.proxima_dose" >
+</div>
+
+</div>
+</div>
+
+
+  <div class="col-md-4">
+    <button type="button" class="btn btn-primary" (click)="update()">ATUALIZAR</button>
+    <button type="button" class="btn btn-primary"><a routerLink="/vacinacao"> VOLTAR</a></button>
+  </div>
+

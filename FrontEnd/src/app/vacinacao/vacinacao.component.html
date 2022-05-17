@@ -1,1 +1,39 @@
-<p>vacinacao works!</p>
+<h1></h1>
+
+
+
+<button type="titulo" class="btn btn-secondary btn-lg btn-block">Controle de Vacinação</button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">COD. USUARIO</th>
+      <th scope="col">COD.VACINA</th>
+      <th scope="col">NUMERO DA DOSE</th>
+      <th scope="col">DATA APLICAÇÃO</th>
+      <th scope="col">DATA PROXIMA DOSE</th>
+      <th scope="col">AÇÃO</th>
+      <th scope="col">AÇÃO</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tbody>
+    <tr *ngFor="let vacinacao of van">
+      <td> {{vacinacao.id }} </td>
+      <td> {{vacinacao.id_usuario }} </td>
+      <td> {{vacinacao.id_vacina }} </td>
+      <td> {{vacinacao.numero_dose}} </td>
+      <td> {{vacinacao.data_aplicacao}}  </td>
+      <td> {{vacinacao.proxima_dose}}  </td>
+
+
+
+      <td> <button type="button" class="btn btn-success">
+        <a routerLink="/vacinacao/update/{{vacinacao.id}}"> Alterar</a></button></td>
+
+      <td><button type="button" class="btn btn-danger">
+        <a routerLink="/vacinacao/delete/{{vacinacao.id}}"> Deletar</a></button></td>
+
+

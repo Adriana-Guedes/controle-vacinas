@@ -6,9 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.controle.vacinas.dto.VacinacaoDTO;
-import com.controle.vacinas.entity.UsuarioEntity;
 import com.controle.vacinas.entity.VacinacaoEntity;
-import com.controle.vacinas.repository.UsuarioRepository;
 import com.controle.vacinas.repository.VacinacaoRepository;
 
 
@@ -69,6 +67,8 @@ public class VacinacaoService {
 				vacinacaoBD.setNumero_dose(novaVacinacao.getNumero_dose());
 				vacinacaoBD.setData_aplicacao(novaVacinacao.getData_aplicacao());
 				vacinacaoBD.setProxima_dose(novaVacinacao.getProxima_dose());
+				vacinacaoBD.setId_usuario(novaVacinacao.getId_usuario());
+				vacinacaoBD.setId_vacina(novaVacinacao.getId_vacina());
 							
 				return vacinacaoRepository.save(vacinacaoBD).toDTO();
 			}

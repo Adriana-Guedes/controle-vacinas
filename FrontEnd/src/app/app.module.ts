@@ -15,6 +15,9 @@ import { UpdateComponent } from './usuarios/update/update.component';
 import { DeleteUserComponent } from './usuarios/delete-user/delete-user.component';
 import { CreateVacinasComponent } from './vacinas/create-vacinas/create-vacinas.component';
 import { DeleteVacinasComponent } from './vacinas/delete-vacinas/delete-vacinas.component';
+import { CreateVacinacaoComponent } from './vacinacao/create-vacinacao/create-vacinacao.component';
+import { UpdateVacinacaoComponent } from './vacinacao/update-vacinacao/update-vacinacao.component';
+import { DeleteVacinacaoComponent } from './vacinacao/delete-vacinacao/delete-vacinacao.component';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { DeleteVacinasComponent } from './vacinas/delete-vacinas/delete-vacinas.
     DeleteUserComponent,
     CreateVacinasComponent,
     DeleteVacinasComponent,
+    CreateVacinacaoComponent,
+    UpdateVacinacaoComponent,
+    DeleteVacinacaoComponent,
 
   ],
   imports: [
@@ -39,6 +45,7 @@ import { DeleteVacinasComponent } from './vacinas/delete-vacinas/delete-vacinas.
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    CommonModule
 
 
 

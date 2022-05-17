@@ -16,6 +16,7 @@ export class UsuariosService {
 
 
 
+
   //LISTA VARIOS USUARIOS
   getUsuariosAll(): Observable<User>  {
 
@@ -48,5 +49,6 @@ export class UsuariosService {
     return this.httpClient.delete<any>(_url);
 
   }
+
 
 }

@@ -1,3 +1,6 @@
+import { DeleteVacinacaoComponent } from './vacinacao/delete-vacinacao/delete-vacinacao.component';
+import { UpdateVacinacaoComponent } from './vacinacao/update-vacinacao/update-vacinacao.component';
+import { CreateVacinacaoComponent } from './vacinacao/create-vacinacao/create-vacinacao.component';
 import { DeleteVacinasComponent } from './vacinas/delete-vacinas/delete-vacinas.component';
 import { UpdateVacinasComponent } from './vacinas/update-Vacinas/update-vacinas.component';
 import { CreateVacinasComponent } from './vacinas/create-vacinas/create-vacinas.component';
@@ -26,7 +29,10 @@ const routes: Routes = [
 
 
 //ROTAS DE VACINAÇÃO
-{path: 'vacinacao', component: VacinacaoComponent}
+{path: 'vacinacao', component: VacinacaoComponent},
+{path: 'vacinacao/create/:id', component: CreateVacinacaoComponent},
+{path: 'vacinacao/update/:id', component: UpdateVacinacaoComponent},
+{path: 'vacinacao/delete/:id', component: DeleteVacinacaoComponent}
 
 
 ];

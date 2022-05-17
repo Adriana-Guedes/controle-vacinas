@@ -1,4 +1,5 @@
 
+
 //MODELO PARA LISTAR TODOS OS USUARIOS
     export interface User {
       id: number;
@@ -17,13 +18,14 @@ export interface ReponseUser {
   data_Nasc: any;
   endereco: string;
   telefone: string;
-  
+
 }
 
 
 
   //MODELO PARA CRIAÇÃO
    export interface RequestCreate {
+      id: number | any;
       nome: string;
       cpf: string;
       data_Nasc: any;
@@ -44,6 +46,7 @@ export interface ReponseUser {
 
   //MODELO PARA UPDATE
   export interface RequestUpdate {
+    id: number;
     nome: string;
     cpf: string;
     data_Nasc: any;
@@ -54,6 +57,7 @@ export interface ReponseUser {
 
 //MODELO PARA REPOSTA UPDATE
 export interface ResponseUpdate{
+  id: number;
   nome: string;
   cpf: string;
   data_Nasc:any ;

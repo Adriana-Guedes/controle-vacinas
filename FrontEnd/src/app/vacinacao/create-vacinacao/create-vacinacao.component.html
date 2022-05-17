@@ -1,0 +1,82 @@
+<h1>Cadastro de vacinação</h1>
+
+
+
+
+<label class="col-md-2 control-label" for="Nome">Cod. Usuario : {{request.id }} </label>
+<br>
+
+<label class="col-md-3 control-label" for="Nome">Nome Completo : {{ request.nome }} </label>
+<br>
+<label class="col-md-3 control-label" for="cpf">CPF : {{ request.cpf }}</label>
+<br>
+<label class="col-md-3 control-label" for="data_Nasc">Nascimento : {{ request.cpf }} </label>
+<br>
+<label class="col-md-2 control-label" for="prependedtext">Telefone : {{ request.telefone }}</label>
+<br>
+<label class="col-md-2 control-label" for="endereco">Endereço {{ request.endereco }}</label>
+<br>
+<br>
+<br>
+
+
+
+<div  *ngIf="request">
+  <div class="col-md-12 control-label">
+    <p class="help-block"><strong>* Campos Obrigatório</strong> </p>
+  </div>
+
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="cpf"><strong>*</strong> Cod. Usuário:  </label>
+    <div class="col-md-2">
+    <input id="id_vacina" name="id_vacina" placeholder="O mesmo acima"   class="form-control input-md"    required maxlength="11">
+    </div>
+
+    <br>
+  <label class="col-md-2 control-label" for="cpf"><strong>*</strong> Cod.  Vacina: </label>
+  <div class="col-md-2">
+  <input id="id_vacina" name="id_vacina"     placeholder="Insira o id da vacina"  class="form-control input-md"    [(ngModel)]="requestC.id_vacina">
+  </div>
+
+  <br>
+  <label class="col-md-2 control-label" for="data_aplicacao"><strong>*</strong>Data da aplicação:</label>
+  <div class="col-md-2">
+  <input id="data_aplicacao" name="data_aplicacao"  placeholder="Ex: 00-00--0000"   [(ngModel)]="requestC.data_aplicacao " class="form-control input-md"  required="" type="text" maxlength="10" >
+  </div>
+
+  <br>
+
+  <label class="col-md-2 control-label" for="numero_dose"><strong>*</strong> Numero da dose:</label>
+  <div class="col-md-2">
+  <input id="numero_dose" name="numero_dose"  placeholder="Ex: PRIMEIRA DOSE"  [(ngModel)]="requestC.numero_dose " class="form-control input-md"  required="" type="text" maxlength="20" >
+  </div>
+
+  <br>
+  <label class="col-md-2 control-label" for="numero_dose"><strong>*</strong>Data da proxima aplicação:</label>
+  <div class="col-md-2">
+  <input id="proxima_dos" name="proxima_dos"  placeholder="Ex: 00-00--0000"  [(ngModel)]="requestC.proxima_dose " class="form-control input-md"  required="" type="text" maxlength="10" >
+  </div>
+
+  <div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="save()">GRAVAR</button>
+        <button type="button" class="btn btn-primary"><a routerLink="/usuarios"> VOLTAR</a></button>
+      </div>
+  </div>
+
+
+  <br>
+
+
+<div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
+  <h3>Criado com sucesso</h3>
+  <label>id: {{response.id }}  </label> <br>
+  <label>Cod. Usuario: {{response.id_usuario }}  </label> <br>
+  <label>Cod. Vaciana: {{response.id_vacina }}  </label><br>
+  <label>Data da aplicação: {{response.data_aplicacao }}  </label><br>
+  <label>Numero da dose: {{response.numero_dose }} </label><br>
+  <label>Data da proxima aplicação:: {{response.proxima_dose }} </label><br>
+</div>
+

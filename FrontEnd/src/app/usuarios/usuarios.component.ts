@@ -16,6 +16,8 @@ export class UsuariosComponent implements OnInit {
 
   constructor(private usuariosService: UsuariosService) { }
 
+
+
   ngOnInit(): void {
 
   this.usuariosService.getUsuariosAll()
@@ -23,7 +25,6 @@ export class UsuariosComponent implements OnInit {
 
     }
 
-  
   }
 
 

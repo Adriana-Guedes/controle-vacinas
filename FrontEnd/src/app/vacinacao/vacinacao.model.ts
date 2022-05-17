@@ -1,18 +1,27 @@
 
-//MODELO PARA LISTAR TODOS OS USUARIOS
+//MODELO PARA LISTAR  VACINAÇAO
     export interface Vacinacao {
-      id: number;
+      id: number | any;
+      id_usuario: number | any;
+      id_vacina: number | any;
+      data_aplicacao: string;
+      numero_dose:string ;
+      proxima_dose: number | any;
+
+
 
   }
 
-//MODELO PARA LISTAR UM USUARIO
-export interface ReponseUser {
-  id: number;
-  nome: string;
-  cpf: string;
-  data_Nasc: any;
-  endereco: string;
-  telefone: string;
+//MODELO PARA LISTAR UM VACINAÇÃO
+export interface ReponseVacinacao {
+  id: number | any;
+  id_usuario: number | any;
+  id_vacina: number | any;
+  data_aplicacao: string;
+  numero_dose:string ;
+  proxima_dose: number | any;
+
+
 
 }
 
@@ -20,39 +29,49 @@ export interface ReponseUser {
 
   //MODELO PARA CRIAÇÃO
    export interface RequestCreateVN {
-      nome: string;
-      cpf: string;
-      data_Nasc: any;
-      endereco: string;
-      telefone: string;
+    id: number | any;
+    id_usuario: number | any;
+    id_vacina: number | any;
+    data_aplicacao: string;
+    numero_dose:string ;
+    proxima_dose: number | any;
+
+
 }
 
 
 //MODELO PARA CRIAÇÃO
   export interface ResponseCreateVN {
-    nome: string;
-    cpf: string;
-    data_Nasc:any ;
-    endereco: string;
-    telefone: string;
+    id: number | any;
+    id_usuario: number | any;
+    id_vacina: number | any;
+    data_aplicacao: string;
+    numero_dose:string ;
+    proxima_dose: number | any;
+
 }
 
 
   //MODELO PARA UPDATE
   export interface RequestUpdateVN {
-    nome: string;
-    cpf: string;
-    data_Nasc: any;
-    endereco: string;
-    telefone: string;
+    id: number | any;
+    id_usuario: number | any;
+    id_vacina: number | any;
+    data_aplicacao: string;
+    numero_dose:string ;
+    proxima_dose: number | any;
+
 }
+
 
 
 //MODELO PARA REPOSTA UPDATE
 export interface ResponseUpdateVN{
-  nome: string;
-  cpf: string;
-  data_Nasc:any ;
-  endereco: string;
-  telefone: string;
+  id: number | any;
+  id_usuario: number | any;
+  id_vacina: number | any;
+  data_aplicacao: string;
+  numero_dose:string ;
+  proxima_dose: number | any;
+
 }

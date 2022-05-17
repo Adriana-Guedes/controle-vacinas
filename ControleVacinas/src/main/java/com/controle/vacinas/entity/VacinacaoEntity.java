@@ -8,8 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 import org.modelmapper.ModelMapper;
@@ -32,30 +31,33 @@ public class VacinacaoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-
 		
-	private Date data_aplicacao;
+	private int id_usuario;
+	
+	private int id_vacina;
+	
+	
+	private String data_aplicacao;
+	
 	private String numero_dose;
-	private Date proxima_dose;
+	
+	
+	private String proxima_dose;
 	
 	
 	
 
 
-	//EU TENHO VARIOS USUARIOS PARA  UMA UNICA VACINA
-	 @ManyToOne// UM ALUNO PODE ESTAR SOMENTE EM UMA TURMA
-	 @JoinColumn(name="id_usuario")// QUANDO FOR GRAVAR A TURMA , NECESSÁRIO INFORMAR A TURMA DELE, VOU DIZER ISSO ATRAVES DA COLUNA
-	 private UsuarioEntity usuarioEntitu;
-	 
-	 
-	 
-	//EU TENHO VARIOS USUARIOS PARA  UMA UNICA VACINA
-	@ManyToOne// UM ALUNO PODE ESTAR SOMENTE EM UMA TURMA
-	@JoinColumn(name="id_vacina")// QUANDO FOR GRAVAR A TURMA , NECESSÁRIO INFORMAR A TURMA DELE, VOU DIZER ISSO ATRAVES DA COLUNA
-	private VacinaEntity vacinaEntitu;
+	
+	
 
 	 
 
+	
+	
+	
+	
+	
 	
 	
 	public VacinacaoDTO toDTO() {
