@@ -52,23 +52,30 @@
       <button type="button" class="btn btn-primary" (click)="save()">GRAVAR</button>
       <button type="button" class="btn btn-primary"><a routerLink="/usuarios"> VOLTAR</a></button>
     </div>
-</div>
+
+    <br>
+    <br>
+
+
+    <div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
+      <h3>Criado com sucesso</h3>
+      <label>id: {{response.id }}  </label> <br>
+      <label>nome: {{response.nome }}  </label><br>
+      <label>data_Nasc: {{response.data_Nasc }}  </label><br>
+      <label>endereco: {{response.endereco }} </label><br>
+      <label>telefone: {{response.telefone }} </label><br>
+    </div>
 
 
 
 </div>
 
 
-<br><br>
 
-
-<div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
-  <h3>Criado com sucesso</h3>
-  <label>id: {{response.id }}  </label> <br>
-  <label>nome: {{response.nome }}  </label><br>
-  <label>data_Nasc: {{response.data_Nasc }}  </label><br>
-  <label>endereco: {{response.endereco }} </label><br>
-  <label>telefone: {{response.telefone }} </label><br>
 </div>
+
+
+
+
 
 

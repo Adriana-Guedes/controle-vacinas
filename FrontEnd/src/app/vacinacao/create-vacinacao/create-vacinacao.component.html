@@ -64,19 +64,25 @@
         <button type="button" class="btn btn-primary" (click)="save()">GRAVAR</button>
         <button type="button" class="btn btn-primary"><a routerLink="/usuarios"> VOLTAR</a></button>
       </div>
+
+      <br>
+
+      <br>
+      <div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
+        <h3>Criado com sucesso</h3>
+        <label>id: {{response.id }}  </label> <br>
+        <label>Cod. Usuario: {{response.id_usuario }}  </label> <br>
+        <label>Cod. Vaciana: {{response.id_vacina }}  </label><br>
+        <label>Data da aplicação: {{response.data_aplicacao }}  </label><br>
+        <label>Numero da dose: {{response.numero_dose }} </label><br>
+        <label>Data da proxima aplicação:: {{response.proxima_dose }} </label><br>
+      </div>
+
   </div>
 
 
-  <br>
 
 
-<div *ngIf="response" > <!--SÓ IRA MOSTRAR O QUE FOI GRAVADO SE TIVER VALOR-->
-  <h3>Criado com sucesso</h3>
-  <label>id: {{response.id }}  </label> <br>
-  <label>Cod. Usuario: {{response.id_usuario }}  </label> <br>
-  <label>Cod. Vaciana: {{response.id_vacina }}  </label><br>
-  <label>Data da aplicação: {{response.data_aplicacao }}  </label><br>
-  <label>Numero da dose: {{response.numero_dose }} </label><br>
-  <label>Data da proxima aplicação:: {{response.proxima_dose }} </label><br>
-</div>
+
+
 

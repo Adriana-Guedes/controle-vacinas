@@ -1,3 +1,4 @@
+import { AppComponent } from './app.component';
 import { DeleteVacinacaoComponent } from './vacinacao/delete-vacinacao/delete-vacinacao.component';
 import { UpdateVacinacaoComponent } from './vacinacao/update-vacinacao/update-vacinacao.component';
 import { CreateVacinacaoComponent } from './vacinacao/create-vacinacao/create-vacinacao.component';
@@ -32,7 +33,9 @@ const routes: Routes = [
 {path: 'vacinacao', component: VacinacaoComponent},
 {path: 'vacinacao/create/:id', component: CreateVacinacaoComponent},
 {path: 'vacinacao/update/:id', component: UpdateVacinacaoComponent},
-{path: 'vacinacao/delete/:id', component: DeleteVacinacaoComponent}
+{path: 'vacinacao/delete/:id', component: DeleteVacinacaoComponent},
+
+{path: 'home', component: AppComponent},
 
 
 ];
