@@ -1,0 +1,9 @@
+package com.controle.vacinas.repository;
+
+
+
+
+
+public interface UsuarioRepository {
+
+}

@@ -1,0 +1,29 @@
+package com.controle.vacinas.dto;
+
+
+
+
+import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class VacinaDTO {
+	
+
+
+	
+	
+	private int id;
+	
+	private String nome;
+	private String fabricante;
+	private int doses; 
+	private int intervalo; 
+
+}

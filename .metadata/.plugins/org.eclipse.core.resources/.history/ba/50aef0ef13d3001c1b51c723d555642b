@@ -1,0 +1,47 @@
+package com.controle.vacinas.dto;
+
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import org.modelmapper.ModelMapper;
+import com.controle.vacinas.entity.UsuarioEntity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class UsuarioDTO {
+
+
+	
+	private int id;
+	
+	private String nome;
+	private String cpf;
+	private Date data_Nasc;
+	private String endereco;
+	private String telefone;
+	
+	
+	
+	
+	
+public UsuarioEntity toEntity() {
+		
+		ModelMapper mapper = new ModelMapper();
+		
+		return mapper.map(this, UsuarioEntity.class);
+	
+	
+	
+	
+	}
+
+}

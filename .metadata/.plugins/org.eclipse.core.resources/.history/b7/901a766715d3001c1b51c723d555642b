@@ -1,0 +1,13 @@
+package com.controle.vacinas.repository;
+
+import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+
+import com.controle.vacinas.entity.VacinaEntity;
+
+
+
+
+
+public interface VacinaRepository extends JpaAttributeConverter<VacinaEntity, int> {
+
+}

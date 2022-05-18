@@ -1,0 +1,49 @@
+package com.controle.vacinas.entity;
+
+
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.modelmapper.ModelMapper;
+import com.controle.vacinas.dto.VacinacaoDTO;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name="vacinacao")
+public class VacinacaoEntity {
+	
+	
+	private int id;
+
+	private UsuarioEntity usuario;
+	private VacinaEntity  vacina;
+		
+	private Date data_aplicacao;
+	private String numero_dose;
+	private Date proxima_dose;
+	
+	
+	public VacinacaoDTO toDTO() {
+		ModelMapper mapper = new ModelMapper();
+		
+		VacinacaoDTO dto = mapper.map(this, VacinacaoDTO.class);
+		
+		return dto;
+	
+	
+	
+  }
+	
+}

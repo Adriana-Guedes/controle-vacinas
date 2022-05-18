@@ -1,0 +1,11 @@
+package com.controle.vacinas.service;
+
+import org.springframework.stereotype.Service;
+
+
+
+
+@Service
+public class VacinacaoService {
+
+}

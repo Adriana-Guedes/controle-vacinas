@@ -1,0 +1,25 @@
+package com.controle.vacinas.entity;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+
+
+
+
+@Entity
+public class Usuario {
+	
+	
+	private int id;
+	private String nome;
+	private String cpf;
+	private Date data_Nasc;
+	private String endereco;
+	private String telefone;
+	
+	
+	
+	
+
+}

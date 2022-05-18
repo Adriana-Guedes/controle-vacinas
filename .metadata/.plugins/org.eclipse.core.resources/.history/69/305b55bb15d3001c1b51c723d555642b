@@ -1,0 +1,10 @@
+package com.controle.vacinas.repository;
+
+
+
+
+
+
+public interface VacinacaoRepository {
+
+}

@@ -1,0 +1,33 @@
+package com.controle.vacinas.entity;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@table(name="usuarios")
+public class Usuario {
+	
+	@Id
+	private int id;
+	private String nome;
+	private String cpf;
+	private Date data_Nasc;
+	private String endereco;
+	private String telefone;
+	
+	
+	
+	
+
+}

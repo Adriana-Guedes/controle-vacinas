@@ -1,0 +1,40 @@
+package com.controle.vacinas.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.controle.vacinas.dto.UsuarioDTO;
+import com.controle.vacinas.entity.UsuarioEntity;
+import com.controle.vacinas.repository.UsuarioRepository;
+
+
+@Service
+public class UsuarioService {
+	
+	
+	
+
+	//INJEÇÃO DE DEPENDENCIA 
+	@Autowired  
+	private UsuarioRepository usuarioRepository;
+	
+	
+	
+	//METODO LISTAR TUDO
+	public List<UsuarioDTO> getAll(){
+		
+	List<UsuarioEntity> lista = usuarioRepository.findAll();		
+		List<UsuarioDTO> listaDTO = new ArrayList<>();	
+		for (UsuarioEntity usuarioaEntity : lista) {			
+			listaDTO.add(usuarioaEntity.toDTO()); //CONVERSOR ARRAY PARA STRING
+		}
+		
+		return listaDTO;
+	
+
+
+ }
+}

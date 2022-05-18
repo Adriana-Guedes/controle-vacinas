@@ -1,0 +1,5 @@
+package com.controle.vacinas.repository;
+
+public class VacinaRepository {
+
+}

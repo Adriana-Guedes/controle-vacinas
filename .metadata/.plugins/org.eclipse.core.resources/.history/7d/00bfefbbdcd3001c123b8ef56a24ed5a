@@ -1,0 +1,5 @@
+package com.controle.vacinas.config;
+
+public class SwaggerConfig {
+
+}

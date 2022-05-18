@@ -1,0 +1,88 @@
+package com.controle.vacinas.entity;
+
+
+
+import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.controle.vacinas.dto.VacinacaoDTO;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name="vacinacao")
+public class VacinacaoEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")	
+	private LocalDate data_aplicacao;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate numero_dose;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate proxima_dose;
+	
+	
+	
+
+
+	//EU TENHO VARIOS USUARIOS PARA  UMA UNICA VACINA
+	 @ManyToOne// UM ALUNO PODE ESTAR SOMENTE EM UMA TURMA
+	 @JoinColumn(name="id_usuario")// QUANDO FOR GRAVAR A TURMA , NECESSÁRIO INFORMAR A TURMA DELE, VOU DIZER ISSO ATRAVES DA COLUNA
+	 private UsuarioEntity id_usuario;
+	 
+	 
+	 
+	//EU TENHO VARIOS USUARIOS PARA  UMA UNICA VACINA
+	@ManyToOne// UM ALUNO PODE ESTAR SOMENTE EM UMA TURMA
+	@JoinColumn(name="id_vacina")// QUANDO FOR GRAVAR A TURMA , NECESSÁRIO INFORMAR A TURMA DELE, VOU DIZER ISSO ATRAVES DA COLUNA
+	private VacinaEntity id_vacina;
+
+	 
+
+	
+	
+	
+	
+	
+	
+	
+	public VacinacaoDTO toDTO() {
+		ModelMapper mapper = new ModelMapper();
+		
+		VacinacaoDTO dto = mapper.map(this, VacinacaoDTO.class);
+		
+		return dto;
+	
+	
+		
+		
+		
+  }
+	
+	
+	
+	
+	
+}

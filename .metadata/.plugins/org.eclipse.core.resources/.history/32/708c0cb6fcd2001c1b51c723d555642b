@@ -1,0 +1,5 @@
+package com.controle.vacinas.entity;
+
+public class Usuario {
+
+}

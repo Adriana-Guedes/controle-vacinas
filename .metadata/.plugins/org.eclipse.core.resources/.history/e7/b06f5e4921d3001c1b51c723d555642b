@@ -1,0 +1,79 @@
+package com.controle.vacinas.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.controle.vacinas.dto.UsuarioDTO;
+import com.controle.vacinas.entity.UsuarioEntity;
+import com.controle.vacinas.repository.UsuarioRepository;
+
+
+@Service
+public class UsuarioService {
+	
+	
+	
+
+	//INJEÇÃO DE DEPENDENCIA 
+	@Autowired  
+	private UsuarioRepository usuarioRepository;
+	
+	//METODO LISTAR TUDO
+	public List<UsuarioDTO> getAll(){
+		
+	List<UsuarioEntity> lista = usuarioRepository.findAll();		
+		List<UsuarioDTO> listaDTO = new ArrayList<>();	
+		for (UsuarioEntity usuarioaEntity : lista) {			
+			listaDTO.add(usuarioaEntity.toDTO()); //CONVERSOR ARRAY PARA STRING
+		}
+		
+		return listaDTO;
+	
+
+
+ }
+	
+	public UsuarioDTO getOne(int id) {
+		Optional<UsuarioEntity> optional = usuarioRepository.findById(id);
+		UsuarioEntity usuario = optional.orElse( new UsuarioEntity());
+		return usuario.toDTO();
+	}
+	
+	
+	public UsuarioDTO save(UsuarioEntity usuario) {		
+		return usuarioRepository.save(usuario).toDTO();	
+		
+		
+		
+	}
+	
+	
+	public UsuarioDTO update(int id, UsuarioEntity novoEndereco) {
+		
+
+		Optional<EnderecoEntity> enderecoBD = enderecoRepository.findById(id);
+		
+		
+		if (enderecoBD.isPresent()) {
+			EnderecoEntity obj = enderecoBD.get();
+			
+			obj.setCep( novoEndereco.getCep() );
+			obj.setCidade( novoEndereco.getCidade() );
+			obj.setEstado(novoEndereco.getEstado());
+			obj.setNumero(novoEndereco.getNumero());
+			obj.setRua( novoEndereco.getRua());
+			obj.setUsuario( novoEndereco.getUsuario()); 
+			
+			return enderecoRepository.save(obj).toDTO();					
+		}
+		else {
+			return new EnderecoEntity().toDTO();
+		}
+	}
+	
+	
+}

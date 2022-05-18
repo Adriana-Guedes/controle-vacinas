@@ -1,0 +1,42 @@
+package com.controle.vacinas.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.controle.vacinas.dto.VacinaDTO;
+import com.controle.vacinas.entity.VacinaEntity;
+import com.controle.vacinas.repository.VacinaRepository;
+
+@Service
+public class VacinaService {
+	
+	
+	
+	@Autowired
+	private VacinaRepository vacinaRepository;
+	
+	public List<VacinaDTO> getAll(){
+		
+	List<VacinaEntity> lista = vacinaRepository.findAll();
+		
+		List<VacinaDTO> listaDTO = new ArrayList();
+		
+		for (VacinaEntity vacinaEntity : lista) {
+//			
+			listaDTO.add(vacinaEntity.toDTO());
+		}
+		
+		return listaDTO;
+	
+	
+
+ }
+	
+	
+	
+	
+	
+}

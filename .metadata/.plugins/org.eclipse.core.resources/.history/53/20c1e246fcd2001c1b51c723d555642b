@@ -1,0 +1,14 @@
+package com.controle.vacinas.entity;
+
+public class Vacina {
+	
+	
+	private String nome;
+	private String fabricante;
+	private int doses; 
+	private int intervalo; 
+	
+	
+	
+	
+}
